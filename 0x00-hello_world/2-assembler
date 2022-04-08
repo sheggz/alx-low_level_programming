@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc -c -o $(echo $CFILE | tr .c .s) $CFILE
