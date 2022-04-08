@@ -3,7 +3,7 @@
 /**
  * main - print to standard error without printf,
  *	puts and putschar
- * fwrite - takes 4 arguments, the string to be printed, 
+ * fwrite - takes 4 arguments, the string to be printed,
  *	the size
  *	of the number of data items stored,the size of each,
  *	the output stream.
@@ -12,6 +12,6 @@
 
 int main(void)
 {
-	fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19", 60, 1, stderr);
+	fwrite("and that piece of art is useful\" - Dora Korpar, 2015-10-19", 59, 1, stderr);
 	return (1);
 }
