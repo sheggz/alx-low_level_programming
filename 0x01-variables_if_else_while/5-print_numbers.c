@@ -1,9 +1,10 @@
 #include <stdio.h>
 /**
  * main- a code that prints 0-9
+ * Return: 0 if code is succesful
 */
 
-void main (void)
+int main (void)
 {
 	int i = 0;
 	
@@ -12,4 +13,6 @@ void main (void)
 		printf("%d", i);
 	}
 	putchar('\n');
+
+	return (0);
 }
