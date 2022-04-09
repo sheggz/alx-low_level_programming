@@ -7,7 +7,8 @@
 
 int main(void)
 {
-	for (int i = 67; i < 123; i++)
+	int i = 0;
+	for (i = 67; i < 123; i++)
 	{
 		putchar((char) i);
 		putchar('\n');
