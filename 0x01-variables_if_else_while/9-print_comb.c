@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	char ch;
+	int ch;
 	
 	for (ch = '0'; ch < ':'; ch++) /* : is next atfer 9 on the ascii table
 					  i could've used <= 9 */
