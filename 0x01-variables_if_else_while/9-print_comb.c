@@ -9,10 +9,9 @@ int main(void)
 {
 	int ch;
 
-	for (ch = '0'; ch < ':'; ch++) /**
-					 * : is next atfer 9 on the ascii table
+	for (ch = '0'; ch < ':'; ch++)  /* : is next atfer 9 on the ascii table
 					 * i could've used <= 9 
-					 * */
+					 */
 	{
 		putchar(ch);
 		if (ch != '9')
