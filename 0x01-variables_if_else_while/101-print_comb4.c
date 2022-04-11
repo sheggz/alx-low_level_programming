@@ -22,7 +22,7 @@ int main(void)
 					putchar(i);
 					putchar(j);
 					putchar(k);
-					if (i == 7 && j == 8 && k == 9)
+					if (i == 55 && j == 56 && k == 57)
 					{
 						return (0);
 					}
@@ -30,14 +30,13 @@ int main(void)
 					{
 						putchar(',');
 						putchar(' ');
-					}	
-				}	
+					}
+				}
 			}
 		}
 	}
-	
-	
-	
+	putchar('\n');
+
 	return (0);
 }
 
