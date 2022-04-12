@@ -1,5 +1,5 @@
+#include <unistd.h>
 #include "main.h"
-#include "_putchar.c"
 /**
  * main - print '_putchar'
  * Return: 0 if successful
