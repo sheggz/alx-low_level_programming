@@ -1,7 +1,7 @@
 #include "main.h"
 /**
- * print_alphabet - print the lowercase alphabets with a function whose prototype
- *	 is in main.
+ * print_alphabet - print the lowercase alphabets with a function
+ * whose prototype is in main.
 */
 
 void print_alphabet(void)
@@ -10,7 +10,7 @@ void print_alphabet(void)
 
 	for (i = 97; i <= 122; i++)
 	{
-		_putchar((char) i);	
+		_putchar((char) i);
 	}
 	_putchar('\n');
 }
