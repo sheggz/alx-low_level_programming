@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * print_to_98 - print all natural numbers from n to 98
- * @n -number to begin from
+ * @n: number to begin from
  */
 
 void print_to_98(int n)
@@ -36,6 +36,7 @@ void print_to_98(int n)
 				_putchar(' ');
 			}
 		}
+		_putchar('\n');
 	}
 	else if (n >= -1000 && n < 98)
 	{
@@ -57,7 +58,7 @@ void print_to_98(int n)
 					_putchar(((-i % 100) / 10) + '0');
 					_putchar(((-i % 100) % 10) + '0');
 				}
-				else if ((-i / 10) != 0) 
+				else if ((-i / 10) != 0)
 				{
 					_putchar('-');
 					_putchar((-i / 10) + '0');
@@ -65,7 +66,7 @@ void print_to_98(int n)
 				}
 				else if (i == 0)
 				{
-			       		_putchar('0');
+					_putchar('0');
 				}
 				else if (-i < 10)
 				{
@@ -91,6 +92,7 @@ void print_to_98(int n)
 				_putchar(' ');
 			}
 		}
+		_putchar('\n');
 
 	}
 }
