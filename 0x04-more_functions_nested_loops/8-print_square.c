@@ -11,13 +11,14 @@ void print_square(int size)
 
 	for (i = 0; i < size; i++)
 	{
-		if (size > 0) /* this if statement isnt necessary
+		if (size > 0) /*
+			       * this if statement isnt necessary
 			       * because the for loop will only start
 			       * in the first place if i < size and for
 			       * 0 < size then size must be +ve
 			       */
 		{
-			for(j = 0; j < size; j++)
+			for (j = 0; j < size; j++)
 			{
 				_putchar('#');
 			}
