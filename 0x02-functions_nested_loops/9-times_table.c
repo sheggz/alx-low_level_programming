@@ -18,12 +18,12 @@ void times_table(void)
 				_putchar(((i * j) / 10) + '0');
 			}
 			_putchar(((i * j) % 10) + 48);
-			if (j < 9 && (i * j) >= 10)
+			if (j < 9 && (i * (j + 1)) >= 10)
 			{
 				_putchar(',');
 				_putchar(' ');
 			}
-			else if (j < 9 && (i * j) < 10)
+			else if (j < 9 && (i * (j + 1)) < 10)
 			{
 				_putchar(',');
 				_putchar(' ');
