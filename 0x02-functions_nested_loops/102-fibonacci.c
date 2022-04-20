@@ -7,7 +7,7 @@
 
 int main(void)
 {
-	int i = 0, sum = 0, n1 = 1, n2 = 2;
+	long int i = 1, sum = 0, n1 = 1, n2 = 2;
 
 	printf("%d, %d", n1, n2);
 	while (i <= 48)
