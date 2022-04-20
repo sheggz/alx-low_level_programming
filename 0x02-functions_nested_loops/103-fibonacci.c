@@ -10,7 +10,7 @@ int main(void)
 {
 	long int i = 1, sum = 0, n1 = 1, n2 = 2, even_sum = 2;
 
-	while (True)
+	while (1)
 	{
 		sum = n1 + n2;
 		if (sum >= 4000000)
