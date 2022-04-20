@@ -7,13 +7,13 @@
 
 int main(void)
 {
-	long int i = 1, sum = 0, n1 = 1, n2 = 2;
+	unsigned long int i = 1, sum = 0, n1 = 1, n2 = 2;
 
-	printf("%ld, %ld", n1, n2);
+	printf("%lu, %lu", n1, n2);
 	while (i <= 96)
 	{
 		sum = n1 + n2;
-		printf(", %ld", sum);
+		printf(", %lu", sum);
 		n1 = n2;
 		n2 = sum;
 		i++;
