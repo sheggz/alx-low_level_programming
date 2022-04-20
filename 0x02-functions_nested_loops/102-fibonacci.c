@@ -9,11 +9,11 @@ int main(void)
 {
 	long int i = 1, sum = 0, n1 = 1, n2 = 2;
 
-	printf("%d, %d", n1, n2);
+	printf("%lu, %lu", n1, n2);
 	while (i <= 48)
 	{
 		sum = n1 + n2;
-		printf(", %d", sum);
+		printf(", %lu", sum);
 		n1 = n2;
 		n2 = sum;
 		i++;
