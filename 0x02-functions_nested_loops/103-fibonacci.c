@@ -21,7 +21,7 @@ int main(void)
 		n2 = sum;
 		i++;
 	}
-	printf(", %lu", even_sum);
+	printf("%lu", even_sum);
 	printf("\n");
 
 	return (0);
