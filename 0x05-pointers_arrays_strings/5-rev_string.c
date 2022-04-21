@@ -12,7 +12,7 @@ void rev_string(char *s)
 	while (s[len] != '\0')
 		len++;
 
-	for (i = len; len >= 0; --len)
+	for (i = len; i >= 0; --i)
 	{
 		cache = s[i];
 		s[i] = s[j];
