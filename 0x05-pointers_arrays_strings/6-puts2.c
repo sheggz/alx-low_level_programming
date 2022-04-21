@@ -1,7 +1,7 @@
 #include "main.h"
 /**
  * puts2 - a function that prints every 2 characters of
-	  a string starting from the first.
+ *	   a string starting from the first.
  * @str: a pointer to string
  */
 
