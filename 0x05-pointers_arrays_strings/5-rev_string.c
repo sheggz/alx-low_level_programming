@@ -6,16 +6,18 @@
 
 void rev_string(char *s)
 {
-	int i, cache, len = 0;
+	int i, j = 0, cache, len = 0;
 
 	while (s[len] != '\0')
 		len++;
 
-	for(len; len >= 0; --len)
+	for(i = len; len >= 0; --len)
 	{
-		cache = s[len];
-		s[len] = s[i];
-		s[i++] = cache;
+		cache = s[i];
+		s[i] = s[j];
+		s[j++] = cache; /* j is used to run throug the array
+				 * from begining
+				 */
 	}	
 
 }
