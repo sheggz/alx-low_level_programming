@@ -1,4 +1,4 @@
-#include <stdio.h>
+
 #include "main.h"
 
 /**
@@ -28,7 +28,7 @@ char *_strcat(char *dest, char *src)
 	}
 	/* dest[len_dest + 1] = '\0'; */
 
-	return dest;
+	return (dest);
 
 
 }
