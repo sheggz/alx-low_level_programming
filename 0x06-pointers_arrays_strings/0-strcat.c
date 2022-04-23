@@ -17,16 +17,16 @@ char *_strcat(char *dest, char *src)
 	while (src[len_src] != '\0')
 		len_src++;
 	while (dest[len_dest] != '\0')
-		len_dest++;		
+		len_dest++;
 
 	for (i = 0; i <= len_src; ++i)
 	{
-		/*printf("%d, %d\n", i, len_dest);*/
+		/* printf("%d, %d\n", i, len_dest); */
 		dest[len_dest++] = src[i];
 
-		/*printf("%c, %c, %s\n", src[i], dest[len_dest], dest);*/
+		/* printf("%c, %c, %s\n", src[i], dest[len_dest], dest); */
 	}
-	/* dest[len_dest + 1] = '\0';*/
+	/* dest[len_dest + 1] = '\0'; */
 
 	return dest;
 
