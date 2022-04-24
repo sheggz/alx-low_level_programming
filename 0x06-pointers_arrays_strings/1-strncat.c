@@ -24,7 +24,7 @@ char *_strncat(char *dest, char *src, int n)
 
 		/* printf("%c, %c, %s\n", src[i], dest[len_dest], dest); */
 	}
-	/* dest[len_dest + 1] = '\0'; */
+	dest[len_dest + 1] = '\0';
 
 	return (dest);
 }
