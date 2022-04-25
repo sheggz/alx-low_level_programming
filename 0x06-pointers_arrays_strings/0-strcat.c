@@ -3,7 +3,7 @@
 
 /**
  * _strcat - function appends the src string to the dest string, overwriting
- * 	     the terminating null byte (\0) at the end of dest, and then adds
+ *	     the terminating null byte (\0) at the end of dest, and then adds
  *	     a terminating null byte
  * @src:  pointer to string to be appended
  * @dest: pointer to string to be appended to
