@@ -10,12 +10,12 @@ int divide(int num, int divisor);
 
 int is_prime_number(int n)
 {
-	int div = 2; /* a global divisor that will be used in a recursive fn*/
+	int div = 2; /* a global divisor that will be used in a recursive fn */
 
 	/* 1 and 0 are not prime numbers */
 	if (n <= 1)
 		return (0);
-	return (divisor(n, 2));
+	return (divisor(n, div));
 }
 
 /**
