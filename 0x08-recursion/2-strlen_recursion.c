@@ -16,7 +16,7 @@ int _strlen_recursion(char *s)
  * function call should return. hence; in code we have:
 */
 	
-	if(s* == '\0')
+	if(*s == '\0')
 		return (0);
 	return (1 + _strlen_recursion(&(*(s + 1))));
 }
