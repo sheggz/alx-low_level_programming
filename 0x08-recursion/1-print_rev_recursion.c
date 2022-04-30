@@ -12,7 +12,7 @@ void _print_rev_recursion(char *s)
 	_print_rev_recursion(s + 1);
 	_putchar(*s); /*
 		       * this means that it will only start printing when
-		       * it has gotten to the end of the string, i.e while 
+		       * it has gotten to the end of the string, i.e while
 		       * descending the stack.
 		       */
 }
