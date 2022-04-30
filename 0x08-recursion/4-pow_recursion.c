@@ -10,19 +10,19 @@
 
 int _pow_recursion(int x, int y)
 {
-	/* 
+	/*
 	* EXPLANATION - case study 2^4 = 2^1 * 2^3;
 	* 2^4 = 2^1 * (2^1 * 2^2)
 	* we can say on each instance x^y = x * x^(y - 1)
 	*/
-	
+
 	/* BASE CASE */
 	if (y == 1)
 		return (x);
 	else if (y == 0)
 		return (1);
 	else if (y < 0)
-		return (1 / (x * _pow_recursion (x, y - 1)));
-	return (x * _pow_recursion (x, y - 1));
+		return (1 / (x * _pow_recursion(x, (-y) - 1)));
+	return (x * _pow_recursion(x, y - 1));
 
 }
