@@ -1,5 +1,5 @@
 #include "main.h"
-int divide(int num, int divisor = 2);
+int divide(int num, int divisor);
 
 /**
  * is_prime_number -  a function that returns 1 if the input integer
@@ -10,10 +10,12 @@ int divide(int num, int divisor = 2);
 
 int is_prime_number(int n)
 {
+	int div = 2; /* a global divisor that will be used in a recursive fn*/
+
 	/* 1 and 0 are not prime numbers */
 	if (n <= 1)
 		return (0);
-	return (divisor(n));
+	return (divisor(n, 2));
 }
 
 /**
@@ -24,7 +26,7 @@ int is_prime_number(int n)
  * Return: 1 if prime, 0 if not
 */
 
-int divide(int num, int divisor = 2)
+int divide(int num, int divisor)
 {
 	/* num cant have a factor > num/2 */
 	/* we'd test if the number is divisible by any num from 2 - num/2 */
