@@ -20,9 +20,9 @@ int is_prime_number(int n)
 
 /**
  * divide - a function the num is perfectly divisible by other numbers
- * 	    asides 1 and itself.
+ *	    asides 1 and itself.
  * @num: number under investigation
- * @divisor: a number between 2 and num/2 
+ * @divisor: a number between 2 and num/2
  * Return: 1 if prime, 0 if not
 */
 
@@ -34,7 +34,7 @@ int divide(int num, int divisor)
 		return (0);
 	/* if theres a remainder up till num/2 then it is only perfectly */
 	/* divisible by 1 and itself */
-	if (divisor >= num/2)
+	if (divisor >= num / 2)
 		return (1);
 	return (divide(num, divisor + 1));
 
