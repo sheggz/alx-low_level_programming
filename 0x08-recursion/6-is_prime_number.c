@@ -15,7 +15,7 @@ int is_prime_number(int n)
 	/* 1 and 0 are not prime numbers */
 	if (n <= 1)
 		return (0);
-	return (divisor(n, div));
+	return (divide(n, div));
 }
 
 /**
