@@ -1,6 +1,6 @@
 #include "main.h"
-void fill_forward(char *w, int []);
-void fill_reverse(char *x, int []);
+void fill_forward(char *w, char []);
+void fill_reverse(char *x, char []);
 /**
  * is_palindrome - a function that returns 1 if a string is a palindrome
  *		   and 0 if not
@@ -25,7 +25,7 @@ int is_palindrome(char *s)
 		return (0);
 }
 
-void fill_forward(char *w, int forward_arr [])
+void fill_forward(char *w, char forward_arr [])
 {
 	if (*w == '\0')
 		return;
@@ -33,7 +33,7 @@ void fill_forward(char *w, int forward_arr [])
 	fill_forward(w + 1, forward_arr);
 }
 
-void fill_reverse(char *x, int reverse_arr [])
+void fill_reverse(char *x, char reverse_arr [])
 {
 	if (*x == '\0')
 		return;
