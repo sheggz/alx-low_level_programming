@@ -1,6 +1,6 @@
 #include "main.h"
-void fill_forward(char *w);
-void fill_reverse(char *x);
+void fill_forward(char *w, int []);
+void fill_reverse(char *x, int []);
 /**
  * is_palindrome - a function that returns 1 if a string is a palindrome
  *		   and 0 if not
