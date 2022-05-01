@@ -19,7 +19,7 @@ int is_palindrome(char *s)
 	i = 0;
 	fill_reverse(s);
 
-	if (forward = reverse)
+	if (forward == reverse)
 		return (1);
 	else
 		return (0);
