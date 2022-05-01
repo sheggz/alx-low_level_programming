@@ -15,9 +15,9 @@ int is_palindrome(char *s)
 	char forward [100];
 	char reverse [100];
 
-	fill_forward(s);
+	fill_forward(s, forward);
 	i = 0;
-	fill_reverse(s);
+	fill_reverse(s, reverse);
 
 	if (forward == reverse)
 		return (1);
@@ -25,18 +25,18 @@ int is_palindrome(char *s)
 		return (0);
 }
 
-void fill_forward(char *w)
+void fill_forward(char *w, int forward_arr [])
 {
 	if (*w == '\0')
 		return;
-	forward[i++] = *w;
-	fill_forward(w + 1);
+	forward_arr[i++] = *w;
+	fill_forward(w + 1, forward_arr);
 }
 
-void fill_reverse(char *x)
+void fill_reverse(char *x, int reverse_arr [])
 {
 	if (*x == '\0')
 		return;
-	fill_reverse(x + 1);
-	reverse[i++] = *x;
+	fill_reverse(x + 1, reverse_arr);
+	reverse_arr[i++] = *x;
 }
