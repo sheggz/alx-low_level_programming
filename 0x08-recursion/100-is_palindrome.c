@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include "main.h"
 void fill_forward(int *, char *w, char []);
 void fill_reverse(int *, char *x, char []);
 int strcomp(char *a, char *b);
@@ -12,19 +12,20 @@ int strcomp(char *a, char *b);
 
 /**
  * is_palindrome - a function that returns 1 if a string is a palindrome
- *                 and 0 if not                                                      
+ *                 and 0 if not
  * @s: pointer to string to be investigated
- * Return: 1 if palindrome, 0 if not                                                 
+ * Return: 1 if palindrome, 0 if not
  */
 
 int is_palindrome(char *s)
 {
 	int i = 0;
 
-	char forward[100]; /* we're supposed to get the length and 
-			     * create an array of dat length bt here, we assume 
+	char forward[1000]; /* we're supposed to get the length and
+			     * create an array of dat length bt here, we assume
 			     */
-	char reverse[100];
+	char reverse[1000];
+
 	fill_forward(&i, s, forward);
 	forward[i++] = '\0';
 
@@ -40,13 +41,13 @@ int is_palindrome(char *s)
 
 /**
  * fill_forward - a function that uses recursion to fill
- * 		  the forward array.
+ *		  the forward array.
  * @i: pointer to iterating variable
  * @w: pointer to first character of string under investigation
  * @forward_arr: array variable that holds forward array
  */
 
-void fill_forward(int *i, char *w, char forward_arr [])
+void fill_forward(int *i, char *w, char forward_arr[])
 {
 	if (*w == '\0')
 		return;
@@ -55,22 +56,22 @@ void fill_forward(int *i, char *w, char forward_arr [])
 	return;
 }
 
-/**                                                                                  
+/**
  * fill_reverse - a function that uses recursion to fill
- * 		  the reverse array.
+ *		  the reverse array.
  * @i: pointer to iterating variable
  * @x: pointer to first character of string under investigation
  * @reverse_arr: local array variable that holds reverse array
  */
 
-void fill_reverse(int *i, char *x, char reverse_arr [])
+void fill_reverse(int *i, char *x, char reverse_arr[])
 {
-	if (*x == '\0')                                                              
+	if (*x == '\0')
 		return;
 	fill_reverse(&(*i), x + 1, reverse_arr);
 	reverse_arr[(*i)++] = *x;
 	return;
-} 
+}
 
 /**
  * strcomp - a function that uses recursion to compare 2 char arrays
@@ -78,7 +79,7 @@ void fill_reverse(int *i, char *x, char reverse_arr [])
  * @b: pointer to first character of reverse<F8> array
  * Return: 1 if similar, 0 if not.
  */
-int strcomp (char *a, char *b)
+int strcomp(char *a, char *b)
 {
 	if (*a != *b)
 		return (0);
