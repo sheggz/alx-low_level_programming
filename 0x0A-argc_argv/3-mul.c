@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			result = result * argv[0];
+			result = result * argv[i];
 		}
 	}
 	printf("%d\n", result);
