@@ -5,7 +5,7 @@
  * main - add 2 numbers supplied during program call in the cmd line
  * @argc: argument counter
  * @argv: argument vector - array of all arguments used to run the program
- * Return: ) if successful
+ * Return: 0 if successful and 1 if not
  */
 
 int main(int argc, char *argv[])
@@ -21,7 +21,7 @@ int main(int argc, char *argv[])
 	{
 		for (i = 1; i < argc; i++)
 		{
-			if(*(argv[i]) > 57 || *(argv[i]) < 48)
+			if (*(argv[i]) > 57 || *(argv[i]) < 48)
 			{
 				printf("Error\n");
 				return (1);
