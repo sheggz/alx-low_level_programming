@@ -3,7 +3,7 @@
 /**
  * _memcpy - a function that fills a memory  block with a constant byte.
  * @src: pointer to the memory area to be copied
- * @dest: pointer to the begining of destination memory 
+ * @dest: pointer to the begining of destination memory
  * @n: memory bytes to be copied starting from address at s
  * Return: a pointer to the memory area dest
  */
