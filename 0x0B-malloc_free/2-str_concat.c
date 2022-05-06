@@ -51,7 +51,7 @@ char *str_concat(char *s1, char *s2)
 
 	/* case 3, if (*s1 == "" or s1 = null) and (*s2 == "" or s2 == NULL) */
 	else if ((len_str2 == 0 || s2 == NULL) && (len_str1 == 0 || s1 == NULL))
-		return (NULL);
+		return;
 
 	/* case 4, if s1 and s2 points to a string*/
 	ptr = malloc(sizeof(char) * (len_str2 + len_str1 + 1));
