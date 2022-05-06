@@ -15,34 +15,48 @@ char *str_concat(char *s1, char *s2)
 	int i, len_str1 = 0, len_str2 = 0;
 	char *ptr;
 
-	while (*(s1 + len_str1) != '\0')
-		len_str1++;
-	while (s2[len_str2] != '\0')
-		len_str2++;
+	/* CACL len of strings if address supplied != NULL */
+	if (s1 != NULL)
+	{
+		while (*(s1 + len_str1) != '\0')
+			len_str1++;
+	}
+	if (s2)
+	{
+		while (s2[len_str2] != '\0')
+			len_str2++;
+	}
 
-	if (len_str1 == 0 && len_str2 != 0)
+	/* case 1, if (*s1 == "" or s1 = null) and s2 points to a string */
+	if ((len_str1 == 0 || s1 == NULL) && len_str2 != 0)
 	{
 		ptr = malloc(sizeof(char) * len_str2 + 1);
-		if (ptr == NULL)
+		if (ptr == NULL) /* handle malloc return incase of error */
 			return (NULL);
 		for (i = 0; i <= len_str2; ++i)
 			ptr[i] = s2[i];
 		return (ptr);
 	}
-	else if (len_str2 == 0 && len_str1 != 0)
+
+	/* case 2, if (*s2 == "" or s2 = null) and s1 points to a string */
+	else if ((len_str2 == 0 || s2 == NULL) && len_str1 != 0)
 	{
 		ptr = malloc(sizeof(char) * len_str1 + 1);
-		if (ptr == NULL)
+		if (ptr == NULL) /* handle malloc return incase of error */
 			return (NULL);
-		for (i = 0; i <= len_str2; ++i)
+		for (i = 0; i <= len_str1; ++i)
 			ptr[i] = s1[i];
 		return (ptr);
 	}
-	else if (len_str2 == 0 && len_str1 == 0)
+
+	/* case 3, if (*s1 == "" or s1 = null) and (*s2 == "" or s2 == NULL) */
+	else if ((len_str2 == 0 || s2 == NULL) && (len_str1 == 0 || s1 == NULL))
 		return (NULL);
 
+	/* case 4, if s1 and s2 points to a string*/
 	ptr = malloc(sizeof(char) * (len_str2 + len_str1 + 1));
-	if (ptr == NULL)
+
+	if (ptr == NULL) /* handle malloc return incase of error */
 		return (NULL);
 
 	for (i = 0; i < len_str1; ++i)
