@@ -11,25 +11,41 @@
 
 int **alloc_grid(int width, int height)
 {
-	if (width == 0 || height == 0)
-		retutn (NULL);
-	int** 2D_ptr;
-	int i;
+	int** twoD_ptr;
+	int i, j;
 
-	2D_ptr = malloc(sizeof(int *) * height);
-	if (2D_ptr == NULL)
+	if (width == 0 || height == 0)
+		return (NULL);
+	/*
+	 * let's create a pointer that is initialized to a the address of the
+	 * begining of a memory block that will house addressess to other
+	 * memory blocks that will each house intgers
+	 * i.e int** twoD_ptr = &twoD_ptr[0]
+	 *     twoD_ptr[0] will be of type int*
+	 *     twoD_ptr[0] = &twoD_ptr[0][0]
+	 */
+
+
+	twoD_ptr = malloc(sizeof(int *) * height); /* twoD_ptr == &twoD_ptr[0] */
+	if (twoD_ptr == NULL)
 		return (NULL);
 
+	/*
+	 * each position in the first block should be initialized to the
+	 * begining of other unique memory blocks that will stoe intgers
+	 */
+
 	for (i = 0; i < height; i++)
-		*(2D_ptr + i) = malloc(sizeof(int) * width);
-		if (2D_ptr + i == NULL);
-			return (NULL)
-
-	/* initialize all elements */
+	{
+		*(twoD_ptr + i) = malloc(sizeof(int) * width);
+		if (twoD_ptr + i == NULL)
+			return (NULL);
+	}
+	/* initialize all positions in each unique memory block to 0 */
 	for (i = 0; i < height; i++)
-		for (j = 0; j < width, ++j)
-			*(*(2D_ptr + i) + j) = 0;
-
-
-	
+	{
+		for (j = 0; j < width; ++j)
+			*(*(twoD_ptr + i) + j) = 0; /* same as twoD_ptr[i][j] */
+	}
+	return (twoD_ptr);
 }
