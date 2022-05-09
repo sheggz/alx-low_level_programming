@@ -43,7 +43,12 @@ int **alloc_grid(int width, int height)
 		*(twoD_ptr + i) = malloc(sizeof(int) * width);
 		if (*(twoD_ptr + i) == NULL)
 		{
-			free(*(twoD_ptr + i));
+			for (j = i; j >= 0; --j)
+				free(*(twoD_ptr + j)); /*
+							 * free everything
+							 * backwards
+							 */
+			free(twoD_ptr); /* free the general space */
 			return (NULL);
 		}
 	}
