@@ -31,6 +31,7 @@ int **alloc_grid(int width, int height)
 	{
 		free(twoD_ptr);
 		return (NULL);
+	}
 
 	/*
 	 * each position in the first block should be initialized to the
@@ -40,9 +41,11 @@ int **alloc_grid(int width, int height)
 	for (i = 0; i < height; i++)
 	{
 		*(twoD_ptr + i) = malloc(sizeof(int) * width);
-		if (twoD_ptr + i == NULL)
-			free(twoD_ptr);
+		if (*(twoD_ptr + i) == NULL)
+		{
+			free(*(twoD_ptr + i));
 			return (NULL);
+		}
 	}
 	/* initialize all positions in each unique memory block to 0 */
 	for (i = 0; i < height; i++)
