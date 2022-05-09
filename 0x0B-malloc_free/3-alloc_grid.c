@@ -11,7 +11,7 @@
 
 int **alloc_grid(int width, int height)
 {
-	int** twoD_ptr;
+	int **twoD_ptr;
 	int i, j;
 
 	if (width == 0 || height == 0)
@@ -28,6 +28,8 @@ int **alloc_grid(int width, int height)
 
 	twoD_ptr = malloc(sizeof(int *) * height); /* twoD_ptr == &twoD_ptr[0] */
 	if (twoD_ptr == NULL)
+	{
+		free(twoD_ptr);
 		return (NULL);
 
 	/*
@@ -39,6 +41,7 @@ int **alloc_grid(int width, int height)
 	{
 		*(twoD_ptr + i) = malloc(sizeof(int) * width);
 		if (twoD_ptr + i == NULL)
+			free(twoD_ptr);
 			return (NULL);
 	}
 	/* initialize all positions in each unique memory block to 0 */
