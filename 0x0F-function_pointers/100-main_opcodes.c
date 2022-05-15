@@ -32,4 +32,4 @@ int main(int argc, char *argv[])
 		printf("%hhx\n", func_ptr[i]);
 	}
 	return (0);
-
+}
