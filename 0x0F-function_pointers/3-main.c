@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 
 	/* for (i = 0; i < 5; i++) */
 	fnc_ptr = get_op_func(argv[2]);
-	printf("%p\n", fnc_ptr);
+	/* printf("%p\n", get_op_func(argv[2])); */
 	if (/* strcmp(argv[2], arr_sym[i]) == 0 */ fnc_ptr != NULL)
 	{
 		arg_conv[0] = atoi(argv[1]);
