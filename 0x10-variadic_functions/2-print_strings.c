@@ -18,8 +18,16 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	char *temp;
 	va_list ap;
 
-	if (separator == NULL || n == 0)
+	if (n == 0)
 		return;
+	/*
+	 * if (separator == NULL)
+	 *	return;
+	 *
+	 * NB: this is the wrong interpretaion of "if separator is null
+	 * dont print it"
+	 */
+
 
 	va_start(ap, n);
 
@@ -27,12 +35,14 @@ void print_strings(const char *separator, const unsigned int n, ...)
 	{
 		temp = va_arg(ap, char*);
 		if (temp == NULL)
-			temp = "nil";
-		printf("%s%s", temp, separator);
+			temp = "(nil)";
+		printf("%s", temp);
+		if (separator != NULL)
+			printf("%s", separator);
 	}
 	temp = va_arg(ap, char *);
 	if (temp == NULL)
-		temp = "nil";
+		temp = "(nil)";
 	printf("%s\n", temp);
 
 	va_end(ap);
