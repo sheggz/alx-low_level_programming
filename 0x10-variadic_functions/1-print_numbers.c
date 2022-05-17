@@ -33,7 +33,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	}
 	printf("%d\n", va_arg(v_argptr, int));
 
-	va_end(ap);
+	va_end(v_argptr);
 
 }
 
