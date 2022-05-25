@@ -7,7 +7,7 @@
  * @head: a double pointer to the head of the linked list
  * @str: string to be initialized
  * Return: a pointer to our new node
- */ 
+ */
 
 list_t *add_node(list_t **head, const char *str)
 {
