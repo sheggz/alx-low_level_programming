@@ -9,6 +9,7 @@
 
 int pop_listint(listint_t **head)
 {
+	listint_t *temp;
 	/*
 	 * to delete is to remove from the chain 
 	 * and the chain starts with a head pointer that points to the 1st node
@@ -16,7 +17,6 @@ int pop_listint(listint_t **head)
 	 */
 	if (*head == NULL)
 		return (0);
-	listint_t temp;
 	temp = *head;
 	*head = (*head)->next;
 	return (temp->n);
