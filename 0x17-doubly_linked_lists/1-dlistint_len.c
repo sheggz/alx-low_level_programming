@@ -3,7 +3,7 @@
 #include "lists.h"
 
 /**
- * pdlistint_len - a function that returns the number of nodes of
+ * dlistint_len - a function that returns the number of nodes of
  *		    a d-linked list
  * @h: pointer to Node 1 (head pointer)
  * Return: the number of nodes
