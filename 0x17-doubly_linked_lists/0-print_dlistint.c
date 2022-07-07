@@ -13,6 +13,7 @@ size_t print_dlistint(const dlistint_t *h)
 {
 	if (h != NULL)
 	{
+		printf("%d", h->n);
 		return (1 + print_dlistint(h->next));
 	}
 	/* when we encounter NULL on forward traversal */
