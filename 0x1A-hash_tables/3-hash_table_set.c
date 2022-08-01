@@ -45,6 +45,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 			if (strcmp(key_dupl, temp->key) == 0)
 			{
 				free(new_node);
+				free(key_dupl);
+				free(val_dupl);
 				return (0);
 			}
 			temp = temp->next;
