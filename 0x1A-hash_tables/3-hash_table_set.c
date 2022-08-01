@@ -17,7 +17,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	hash_node_t *temp, *new_node, *head;
 
 	if (ht == NULL || ht->size == 0 || ht->array == NULL || key == NULL
-		       	|| strcmp(key, "") == 0)
+						|| strcmp(key, "") == 0)
 		return (0);
 	/* duplicate the key and value since they cant be used */
 	/* that way due to the "const" */
@@ -30,9 +30,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	idx = key_index((unsigned char *)key_dupl, ht->size);
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
-	{
 		return (0);
-	}
 	new_node->key = key_dupl;
 	new_node->value = val_dupl;
 	new_node->next = NULL;
@@ -40,6 +38,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	head = ht->array[idx];
 	if (head != NULL)
 	{
+		temp = ht->array[idx];
+		/* check if key already exixts */
+		while (temp->next)
+		{
+			if (strcmp(key_dupl, temp->key) == 0)
+			{
+				free(new_node);
+				return (0);
+			}
+			temp = temp->next;
+		}
+		/* if key doesnt already exist */
 		temp = head->next;
 		new_node->next = temp;
 	}
