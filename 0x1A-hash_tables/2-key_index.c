@@ -4,6 +4,7 @@
  * key_index - a function to hash a key and return an index
  * @key: the key to be hashed
  * @size: the size of the array of the hashtable
+ * Return: an index in the array
  */
 
 unsigned long int key_index(const unsigned char *key, unsigned long int size)
