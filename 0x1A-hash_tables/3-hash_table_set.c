@@ -48,7 +48,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 				free(key_dupl);
 				free(temp->value);
 				temp->value = val_dupl;
-				return (0);
+				return (1);
 			}
 			temp = temp->next;
 		}
