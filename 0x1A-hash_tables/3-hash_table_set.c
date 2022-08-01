@@ -16,7 +16,8 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	char *key_dupl, *val_dupl;
 	hash_node_t *temp, *new_node, *head;
 
-	if (ht == NULL || key == NULL || strcmp(key, "") == 0)
+	if (ht == NULL || ht->size == 0 || ht->array == NULL || key == NULL
+		       	|| strcmp(key, "") == 0)
 		return (0);
 	/* duplicate the key and value since they cant be used */
 	/* that way due to the "const" */
