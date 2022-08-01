@@ -1,61 +1,41 @@
+#include <stdlib.h>
+#include <stdio.h>
 #include <string.h>
 #include "hash_tables.h"
 
-
 /**
- * hash_table_set - a function that stores data in a hash table
- * @ht: a pointer to the hash table
- * @key: the key of data to be saved
- * @value: the value of data to be saved
- * Return: 0 on failure, 1 on success
- */
-
+  * hash_table_set - Adds an element to the hash table
+  * @ht: The hash table to add or update the key/value to
+  * @key: The key of a value
+  * @value: The value associated with the key
+  *
+  * Return: 1 if it succeeded, 0 otherwise
+  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	unsigned long int idx;
-	char *key_dupl, *val_dupl;
-	hash_node_t *temp, *new_node, *head;
+	unsigned long int idx = 0;
+	hash_node_t *elem = NULL, *new_node = NULL;
 
-	if (ht == NULL || ht->size == 0 || ht->array == NULL || key == NULL
-						|| strcmp(key, "") == 0)
+	if (ht == NULL || key == NULL || (strcmp(key, "") == 0))
 		return (0);
-	/* duplicate the key and value since they cant be used */
-	/* that way due to the "const" */
-	key_dupl = strdup(key);
-	val_dupl = strdup(value);
-	/* handle possible error */
-	if (key_dupl == NULL || val_dupl == NULL)
-		return (0);
-	/* hash the key */
-	idx = key_index((unsigned char *)key_dupl, ht->size);
+
+	idx = key_index((unsigned char *) key, ht->size);
+	elem = ht->array[idx];
+
+	if (elem && strcmp(key, elem->key) == 0)
+	{
+		free(elem->value);
+		elem->value = strdup(value);
+		return (1);
+	}
+
 	new_node = malloc(sizeof(hash_node_t));
 	if (new_node == NULL)
 		return (0);
-	new_node->key = key_dupl;
-	new_node->value = val_dupl;
-	new_node->next = NULL;
-	/* check hashtable FOR COLLISIONS */
-	head = ht->array[idx];
-	if (head != NULL)
-	{
-		temp = ht->array[idx];
-		/* check if key already exixts, update value */
-		while (temp->next)
-		{
-			if (strcmp(key_dupl, temp->key) == 0)
-			{
-				free(new_node);
-				free(key_dupl);
-				free(temp->value);
-				temp->value = val_dupl;
-				return (1);
-			}
-			temp = temp->next;
-		}
-		/* if key doesnt already exist */
-		temp = head->next;
-		new_node->next = temp;
-	}
+
+	new_node->key = strdup(key);
+	new_node->value = strdup(value);
+	new_node->next = ht->array[idx];
 	ht->array[idx] = new_node;
 	return (1);
 }
