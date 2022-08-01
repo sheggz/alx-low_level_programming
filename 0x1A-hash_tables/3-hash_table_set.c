@@ -39,14 +39,15 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	if (head != NULL)
 	{
 		temp = ht->array[idx];
-		/* check if key already exixts */
+		/* check if key already exixts, update value */
 		while (temp->next)
 		{
 			if (strcmp(key_dupl, temp->key) == 0)
 			{
 				free(new_node);
 				free(key_dupl);
-				free(val_dupl);
+				free(temp->value);
+				temp->value = val_dupl;
 				return (0);
 			}
 			temp = temp->next;
