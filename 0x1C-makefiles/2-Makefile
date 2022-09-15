@@ -1,0 +1,13 @@
+CC=gcc
+SRC= main.c school.c
+OBJ=main.o school.o
+NAME=school
+
+# when the all target calls the .o dependencies(targets) it jumps to exwecute those targets
+all: $(OBJ)
+	$(CC) -o school $(OBJ)
+# automate targets with suffix rules
+# this says for every .o target, ther must be a .c dependency to be built
+#
+.c.o:
+	$(CC) -c $<
