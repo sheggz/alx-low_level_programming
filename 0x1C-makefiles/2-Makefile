@@ -5,7 +5,7 @@ NAME=school
 
 # when the all target calls the .o dependencies(targets) it jumps to exwecute those targets
 all: $(OBJ)
-	$(CC) -o school $(OBJ)
+	$(CC) -o $(NAME)  $(OBJ)
 # automate targets with suffix rules
 # this says for every .o target, ther must be a .c dependency to be built
 #
